@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <!--RelativeLayout은 모든 개체가 각자 좌표를 설정해주어야함-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RelativeL">
+    <TextView
+        android:id="@+id/asdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RelativeLayout 구간"
+        android:layout_alignParentTop="true"/>
+    <!--텍스트 표시 height는 높이 width는 길이,
+           wrap_content는 텍스트 길이에 맞추어 늘어남,
+           match_parent는 이 레이아웃의 전채를 포함
+           id는 이 개체의 이름
+           layout_~~~ 이 개체의 좌표 설정
+           Parent가 들어가면 기준이 현재 Layout
+           -->
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="여기에 텍스트 입력"
+        android:layout_below="@id/asdf"
+        android:id="@+id/input"/>
+    <!--텍스트 입력
+        layout_~~에 parent가 붙지 않으면
+        기준을 이 레이아웃 내의 개체의 id로 잡아야함
+        -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/input"
+        android:text="입력"
+        />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/RelativeL"
+        android:orientation="horizontal"
+        android:id="@+id/LinH">
+        <!--LinearLayout은 orientation의 vertical/horizontal로
+            개체를 나열해줌 vertical은 아래, horizontal은 오른쪽으로
+            즉, 개체의 좌표 지정이 필요가 없음-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LinearLayout_horizontal 구간"
+            />
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="text"
+            android:id="@+id/LinHEditText"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="입력"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/LinH"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LinearLayout_Vertical구간"
+            android:textSize="8pt" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="여기에 텍스트 입력" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="입력"
+            android:textSize="10pt" />
+    </LinearLayout>
+</RelativeLayout>
